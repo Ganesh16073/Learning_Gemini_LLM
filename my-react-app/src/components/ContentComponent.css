@@ -1,0 +1,151 @@
+/* Overall container for the content */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #3e3b3b;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.content-container:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Prompt input section */
+.prompt-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Input field styling */
+.prompt-input-field {
+    padding: 12px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.prompt-input-field:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Button Styling */
+.get-content-button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.get-content-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.get-content-button:active {
+    transform: translateY(0);
+    background-color: #004085;
+}
+
+/* Loading state styling */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    color: #555;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #007bff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite; /* Correct animation applied here */
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Error message styling */
+.error {
+    color: #d9534f;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8d7da;
+    border-radius: 6px;
+    border: 1px solid #f5c6cb;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Content display styling */
+.content {
+    background-color: #3e3b3b;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    white-space: pre-line; /* Retain newlines */
+    overflow-wrap: break-word; /* Break long words */
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 20px;
+}
+
+/* Each paragraph within the content */
+.content p {
+    margin: 8px 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .prompt-input-field {
+        width: 100%;
+    }
+
+    .get-content-button {
+        width: 100%;
+    }
+
+    .content {
+        width: 100%;
+        padding: 15px;
+    }
+}
